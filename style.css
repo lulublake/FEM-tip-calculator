@@ -1,0 +1,278 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: hsl(185, 41%, 84%);
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Space Mono', monospace;
+    color: hsl(186, 14%, 43%);
+    font-size: 25px;
+    text-align: center;
+    padding-top: 35px;
+    letter-spacing: 10px;
+}
+.container{
+    background-color: hsl(0, 0%, 100%);
+    letter-spacing: 0;
+    height: max-content;
+    margin-top: 35px;
+    padding: 23px;
+    font-weight: bolder;
+    border-radius: 35px 35px 0 0;
+}
+.right-container{
+    background-color: hsl(183, 100%, 15%);
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    border-radius: 15px;
+    padding: 40px 25px 25px 25px;
+}
+.first-right-container{
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.second-right-container{
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.tip{
+    color: white;
+    font-size: 15px;
+}
+#reset{
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Space Mono', monospace;
+    background-color: hsl(172, 67%, 45%);
+    border: 0;
+    border-radius: 7px;
+    color: hsl(183, 100%, 15%);
+}
+#reset:active{
+    background-color: rgba(2, 132, 132, 0.666);
+}
+span{
+    color: hsl(184, 14%, 56%);
+    display: block;
+    font-size: 12px;
+}
+.price{
+    color: hsl(172, 67%, 45%);
+    font-size: 30px;
+}
+.first-left-container{
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    text-align: start;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.second-left-container{
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    height: max-content;
+    margin-top: 30px;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.button{
+    width: 47%;
+    font-size: 23px;
+    padding: 5px 10px;
+    text-align: center;
+    align-items: center;
+    background-color: hsl(183, 100%, 15%);
+    border: 0;
+    margin-top: 15px;
+    margin-right: 0px;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Space Mono', monospace;
+}
+.button:active{
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+#ip1{
+    width: 47%;
+    padding: 5px 15px;
+    border: 0;
+    font-family: 'Space Mono', monospace;
+    border-radius: 5px;
+    font-size: 25px;
+    text-align: right;
+    margin-top: 15px;
+    background-color: hsl(189, 41%, 97%);
+}
+::placeholder{
+    color: hsl(186, 14%, 43%);
+}
+.third-left-container{
+    font-size: 15px;
+    font-family: 'Space Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    margin-top: 35px;
+    margin-bottom: 30px;
+    text-align: start;
+}
+#ip2{
+    padding: 5px;
+    padding-right: 15px;
+    border-radius: 5px;
+    border: 0;
+    background-color: hsl(189, 41%, 97%);
+    margin-top: 5px;
+    text-align: right;
+    font-size: 24px;
+    font-family: 'Space Mono', monospace;
+    background-image: url(images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: 17px 15px;
+
+}
+.left-container{
+    margin: 0 8px;
+}
+#ip3{
+    padding: 5px;
+    border-radius: 5px;
+    border: 0;
+    background-color: hsl(189, 41%, 97%);
+    margin-top: 5px;
+    font-size: 23px;
+    font-family: 'Space Mono', monospace;
+    text-align: right;
+    background-image: url(images/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position: 17px 15px;
+    padding-right: 15px;
+}
+.attribution{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    letter-spacing: 0px;
+}
+
+
+
+@media(min-width: 1440px){
+    .container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-color: hsl(0, 0%, 100%);
+        letter-spacing: 0;
+        height: 50vh;
+        margin-top: 60px;
+        padding: 23px;
+        width: 66vw;
+        font-weight: bolder;
+        border-radius: 35px 35px;
+    }
+    .left-container{
+        margin: 0 8px;
+        width: 30vw;
+        height: 46vh;
+    }
+    .right-container{
+        background-color: hsl(183, 100%, 15%);
+        height: 43vh;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        border-radius: 15px;
+        padding: 50px 35px 25px 35px;
+        width: 30vw;
+        position: relative;
+    }
+    body{
+        background-color: hsl(185, 41%, 84%);
+        height: 100vh;
+        padding: 0%;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Space Mono', monospace;
+        color: hsl(186, 14%, 43%);
+        font-size: 25px;
+        text-align: center;
+        letter-spacing: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+    #reset{
+        padding: 10px;
+        font-size: 20px;
+        font-family: 'Space Mono', monospace;
+        background-color: hsl(172, 67%, 45%);
+        border: 0;
+        border-radius: 7px;
+        color: hsl(183, 100%, 15%);
+        position: absolute;
+        bottom: 2rem;
+        right: 50%;
+        margin-right: -40%;
+        width: 80%;
+
+    }
+    .attribution{
+        display: flex;
+        background-color: inherit;
+        justify-content: center;
+        letter-spacing: 0px;
+    }
+    .price{
+        color: hsl(172, 67%, 45%);
+        font-size: 35px;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .button{
+        width: 30%;
+        font-size: 23px;
+        padding: 5px 10px;
+        text-align: center;
+        align-items: center;
+        background-color: hsl(183, 100%, 15%);
+        border: 0;
+        margin-top: 15px;
+        margin-right: 0px;
+        border-radius: 5px;
+        color: white;
+        font-family: 'Space Mono', monospace;
+    }
+    #ip1{
+        width: 30%;
+        padding: 5px 15px;
+        border: 0;
+        font-family: 'Space Mono', monospace;
+        border-radius: 5px;
+        font-size: 25px;
+        text-align: right;
+        margin-top: 15px;
+        background-color: hsl(189, 41%, 97%);
+    }
+}
