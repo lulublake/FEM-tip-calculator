@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet"> -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
     
@@ -23,43 +23,118 @@
     <div class="left-container">
       <div class="first-left-container">
         Bill<br>
-        <input id="ip2" type="number">
+        <input id="ip2" min="0" type="number">
       </div>
       <div class="second-left-container">
         Select Tip %
         <div class="buttons">
-          <button class="button">5%</button>
-          <button class="button">10%</button>
-          <button class="button">15%</button>
-          <button class="button">25%</button>
-          <button class="button">50%</button>
-        <input id="ip1" placeholder="Custom" type="number">
+          <button class="button" id="five">5%</button>
+          <button class="button" id="ten">10%</button>
+          <button class="button" id="fifteen">15%</button>
+          <button class="button" id="twentyFive">25%</button>
+          <button class="button" id="fifty">50%</button>
+        <input id="ip1" min="1" max="100" placeholder="Custom" type="number">
         </div>
       </div>
       <div class="third-left-container">
         Number of People<br>
-        <input id="ip3" type="number">
+        <input id="ip3" step="1" min="1" type="number">
       </div>
     </div>
     <div class="right-container">
       <div class="first-right-container">
         <div class="tip">Tip Amount
-        <span>/ person</span>
+        <span class="span">/ person</span>
         </div>
-        <div class="price">$4.27</div>
+        <div class="price">$<span id="tippp">0.00</span></div>
       </div>
       <div class="second-right-container">
           <div class="tip">Total
-          <span>/ person</span>
+          <span class="span">/ person</span>
           </div>
-          <div class="price">$32.79</div>
+          <div class="price">$<span id="pricepp">0.00</span></div>
       </div> 
-      <button id="reset">RESET</button>    
+      <button id="reset" type="reset">RESET</button>    
     </div>
   </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://www.frontendmentor.io/profile/lulublake">Blake</a>.
   </div>
+  <script>
+    function runThis(){
+          return (Math.ceil(((parseFloat(bill.value) + (parseFloat(bill.value) * parseFloat(percent.value) / 100))/parseFloat(nop.value))* 100)/100).toFixed(2);
+    }
+    var bill = document.getElementById('ip2'); 
+    var nop = document.getElementById('ip3');
+    var five = document.getElementById('five');
+    var ten = document.getElementById('ten');
+    var fifteen = document.getElementById('fifteen');
+    var twentyFive = document.getElementById('twentyFive');
+    var fifty = document.getElementById('fifty');
+    var percent = document.getElementById('ip1');
+    var tippp = document.getElementById('tippp');
+    var pricepp = document.getElementById('pricepp');
+    var reset = document.getElementById('reset')
+    var minBill = 1;
+    var minNop = 1;
+    var minPercent = 5;
+    five.addEventListener('click', function(){
+      percent.value = 5;
+      nop.value = minNop
+      if(parseFloat(bill.value) < minBill  || bill.value == ''){
+        bill.value = 10;
+      }
+    })
+    ten.addEventListener('click', function(){
+      percent.value = 10;
+      nop.value = minNop
+      if(parseFloat(bill.value) < minBill  || bill.value == ''){
+        bill.value = 10;
+      }
+    })
+    fifteen.addEventListener('click', function(){
+      percent.value = 15;
+      nop.value = minNop
+      if(parseFloat(bill.value) < minBill  || bill.value == ''){
+        bill.value = 10;
+      }
+    })
+    twentyFive.addEventListener('click', function(){
+      percent.value = 25;
+      nop.value = minNop
+      if(parseFloat(bill.value) < minBill  || bill.value == ''){
+        bill.value = 10;
+      }
+    })
+    fifty.addEventListener('click', function(){
+      percent.value = 50;
+      nop.value = minNop
+      if(parseFloat(bill.value) < minBill || bill.value == ''){
+        bill.value = 10;
+      }
+    });
+
+    nop.addEventListener('change', function(event){
+      if(percent.value == ''|| parseFloat(percent.value) < 1){
+        percent.value = minPercent;
+      }
+      if(bill.value == '' || parseFloat(bill.value) < 1){
+        bill.value = minBill;
+      }
+      if(nop.value == '' || parseFloat(nop.value) < 1){
+        nop.value = minNop;
+      }
+      tippp.innerHTML = (((runThis() * nop.value) - bill.value) / nop.value).toFixed(2);
+      pricepp.innerHTML = runThis()
+    })
+    reset.addEventListener('click',function(){
+      bill.value = '';
+      percent.value = '';
+      nop.value = '';
+      tippp.innerHTML = '0.00';
+      pricepp.innerHTML = '0.00';
+    })
+  </script>
 </body>
 </html>
